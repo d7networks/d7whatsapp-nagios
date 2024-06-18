@@ -82,7 +82,6 @@ import json
 import urllib.request
 
 GW_URL = "https://api.d7networks.com/whatsapp/v2/send"
-# GW_URL = "https://webhook.site/8ced52f5-7c2a-4f1e-beee-37a9e4464484"
 
 # Can be generated from https://app.d7networks.com/developer/applications'
 D7TOKEN = "D7_TOKEN"

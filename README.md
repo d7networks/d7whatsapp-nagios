@@ -7,6 +7,7 @@ Please contact support@d7networks.com or signup at https://d7networks.com to ena
 Once the whatsapp account is registered with meta, You will have to create following two templates for notifications. 
 
 Template name: **host_notification_1**
+
 Body: 
 
     ***** Nagios *****
@@ -21,6 +22,7 @@ Body:
 
 
 Template name: **service_notification_1**
+
 Body: 
 
     ***** Nagios *****

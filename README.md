@@ -1,4 +1,4 @@
-# Nagios alerts on WhatsApp through D7WhatsApp connector
+# Nagios alerts on WhatsApp through D7 Connector
 ## Subscribe to D7WhatsApp and create templates
 Before starting nagios setup make sure you have a valid WhatsApp subscription on https://d7networks.com.
 Please contact support@d7networks.com or signup at https://d7networks.com to enable WhatsApp on your D7 Account. 

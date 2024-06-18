@@ -92,7 +92,7 @@ or
            use                     generic-contact
            alias                   Nagios Admin
            email                   support@d7networks.com
-           pager		           +97150975xxxx
+           pager                   +97150975xxxx
        }
 
 ### 5. Support and Help

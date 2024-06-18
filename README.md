@@ -1,3 +1,4 @@
+
 # Nagios alerts on WhatsApp through D7 Connector
 ## Subscribe to D7WhatsApp and create templates
 Before starting nagios setup make sure you have a valid WhatsApp subscription on https://d7networks.com.
@@ -61,14 +62,36 @@ Make sure to replace **SOURCE_NUMBER** with the number you've registered with D7
            command_line    $USER1$/d7whatsapp_service.py --source_address "SOURCE_NUMBER" --to $CONTACTPAGER$ --template_id "service_notification_1" --type "$NOTIFICATIONTYPE$" --service "$SERVICEDESC$" --host "$HOSTNAME$" --address "$HOSTADDRESS$" --state "$SERVICESTATE$" --date "$LONGDATETIME$" --info "$SERVICEOUTPUT$"
      }
 
-### 3. Update contact template and add following lines after existing host and service notification commands.
+### 3. Update contact template
+Update service_notification_commands and  add host_notification_commands and include whatsapp notification commands
 
-    Default path : /usr/local/nagios/etc/objects/contacts.cfg or /usr/local/nagios/etc/objects/templates.cfg
-    service_notification_commands notify-service-by-email,service-notify-by-whatsapp
-    host_notification_commands notify-host-by-email,host-notify-by-whatsapp
+Default path : 
+/usr/local/nagios/etc/objects/contacts.cfg 
+or 
+/usr/local/nagios/etc/objects/templates.cfg
 
-### 4. Add a pager number to your contacts, make sure it has the international prefix
+    define contact{
+            name                            generic-contact
+            service_notification_period     24x7
+            host_notification_period        24x7
+            service_notification_options    w,u,c,r,f,s
+            host_notification_options       d,u,r,f,s
+            service_notification_commands   notify-service-by-email,service-notify-by-whatsapp
+            host_notification_commands      notify-host-by-email,host-notify-by-whatsapp
+            register                        0
+            }
 
+
+### 4. Add a pager number
+   Add pager number to your contacts, make sure it has the international prefix
+
+       define contact {
+           contact_name            nagiosadmin
+           use                     generic-contact
+           alias                   Nagios Admin
+           email                   support@d7networks.com
+           pager		           +97150975xxxx
+       }
 
 ### 5. Support and Help
 
